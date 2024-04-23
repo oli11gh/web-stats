@@ -18,7 +18,7 @@ app.get('/', async (req, res) => {
         res.render('index');
     } catch (err) {
         console.error(err);
-        res.status(500).send('Internal Error');
+        res.status(500).send('Wystąpił błąd');
     }
 });
 app.get('/stats', async (req, res) => {
@@ -27,7 +27,7 @@ app.get('/stats', async (req, res) => {
         res.json(stats);
     } catch (err) {
         console.error(err);
-        res.status(500).json({ error: 'Internal Error' });
+        res.status(500).json({ error: 'Wystąpił błąd' });
     }
 });
 async function getServerStats() {
@@ -55,7 +55,7 @@ async function getServerStats() {
             cpuUsage: cpuUsage.toFixed(2),
             ramUsage: `${(ramUsedGB).toFixed(2)}GB / ${(ramTotal / (1024 * 1024 * 1024)).toFixed(2)}GB - ${ramUsagePercent.toFixed(2)}%`,
             diskUsage: `${(diskUsed / (1024 * 1024 * 1024)).toFixed(2)}GB / ${(diskTotal / (1024 * 1024 * 1024)).toFixed(2)}GB - ${diskUsagePercent.toFixed(2)}%`,
-            uptime: `${uptimeDays} days ${uptimeHours} hours ${uptimeMinutes} minutes ${uptimeSeconds} secound`,
+            uptime: `${uptimeDays} dni ${uptimeHours} godziny ${uptimeMinutes} minuty ${uptimeSeconds} sekundy`,
             ramUsedGB: ramUsedGB.toFixed(2)
         };
 
@@ -89,5 +89,5 @@ app.get('*', (req, res) => {
     res.redirect('/');
 });
 app.listen(port, () => {
-    console.log(`Server listening at ${port}`);
+    console.log(`Strona działa na porcie ${port}`);
 });

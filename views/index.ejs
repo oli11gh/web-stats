@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Server Stats</title>
+    <title>Statystyki serwera</title>
     <script src="/public/chart.js"></script>
     <style>
         body {
@@ -51,12 +51,12 @@ button:hover {
     </style>
 </head>
 <body>    
-    <h2>Server stats</h2>
+    <h2>Statystyki serwera</h2>
     <ul id="server-stats">
-        <li>CPU usage: <span id="cpu-usage"></span></li>
-        <li>RAM usage: <span id="ram-usage"></span></li>
-        <li>Disk usage: <span id="disk-usage"></span></li>
-        <li>Server Uptime: <span id="uptime"></span></li>
+        <li>Użycie CPU: <span id="cpu-usage"></span></li>
+        <li>Użycie RAMu: <span id="ram-usage"></span></li>
+        <li>Użycie dysku: <span id="disk-usage"></span></li>
+        <li>Uptime serwera: <span id="uptime"></span></li>
     </ul>
     <canvas id="cpu-chart" width="400" height="100"></canvas>
     <canvas id="ram-chart" width="400" height="100"></canvas>
