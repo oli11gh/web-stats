@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Logowanie</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    color: white;
+    background-color: #222;
+
+}
+button {
+    background-color: #08ae08;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+button:hover {
+    background-color: #008000;
+    text-decoration: none;
+}
+#pole {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    background-color: #444;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    resize: vertical;
+}
+    </style>
+</head>
+<body>
+  <h1>Logowanie</h1>
+
+  <% if (typeof errorMessage !== 'undefined') { %>
+    <p style="color: red;"><%= errorMessage %></p>
+  <% } %>
+  <center>
+  <form method="POST" action="/login">
+    <input type="text" name="username" id="pole" placeholder="Nazwa użytkownika" required />
+    <br>
+    <br>
+    <input type="password" name="password" id="pole" placeholder="Hasło" required />
+    <br>
+    <br>
+    <button type="submit">Zaloguj</button>
+  </form>
+  </center>
+</body>
+</html>
